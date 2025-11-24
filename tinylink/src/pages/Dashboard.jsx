@@ -10,9 +10,10 @@ export default function Dashboard() {
   const [error, setError] = useState(null);
   const [health, setHealth] = useState({ status: 'loading', uptime: 0 });
 
-  const BASE_URL = import.meta.env.VITE_BASE_URL
-    ? import.meta.env.VITE_BASE_URL.replace('/api/links', '/r')
-    : `${window.location.origin}/r`;
+const BASE_URL = import.meta.env.VITE_BASE_URL
+  ? import.meta.env.VITE_BASE_URL.replace('/api/links', '/r')
+  : `${window.location.origin}/r`;
+
 
   useEffect(() => {
     loadLinks();
@@ -129,7 +130,7 @@ export default function Dashboard() {
             <tbody>
               {links.map(l => (
                 <tr key={l.code} className="border-t">
-                  <td className="p-2"><a className="text-blue-600" href={`/${l.code}`}>{l.code}</a></td>
+                  <td className="p-2"><a className="text-blue-600" href={`/code/${l.code}`}>{l.code}</a></td>
                   {/* Inside your table row */}
                     <td className="p-2 max-w-xl overflow-hidden text-ellipsis whitespace-nowrap">
                     <a

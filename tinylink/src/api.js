@@ -41,7 +41,11 @@ export const deleteLink = (code) =>
   request(`/${code}`, { method: "DELETE" });
 
 // Get stats for a single code
-export const getLink = (code) => request(`/${code}`);
+export async function getLink(code) {
+  const res = await fetch(`${BASE_URL}/${code}`);
+  if (!res.ok) throw new Error('Link not found');
+  return res.json();
+}
 
 // Preview target URL (optional)
 export const previewLink = (code) => request(`/${code}/preview`);

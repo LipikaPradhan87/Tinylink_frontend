@@ -4,10 +4,9 @@ import { getLink, clickLink } from "../api"; // import clickLink
 
 export default function StatsPage() {
   const { code } = useParams();
-  console.log(code);
-  
   const [link, setLink] = useState(null);
   const navigate = useNavigate();
+console.log(code);
 
   useEffect(() => {
     async function load() {
