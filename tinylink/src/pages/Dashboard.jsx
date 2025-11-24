@@ -129,7 +129,7 @@ export default function Dashboard() {
             <tbody>
               {links.map(l => (
                 <tr key={l.code} className="border-t">
-                  <td className="p-2"><a className="text-blue-600" href={`/code/${l.code}`}>{l.code}</a></td>
+                  <td className="p-2"><a className="text-blue-600" href={`/${l.code}`}>{l.code}</a></td>
                   {/* Inside your table row */}
                     <td className="p-2 max-w-xl overflow-hidden text-ellipsis whitespace-nowrap">
                     <a

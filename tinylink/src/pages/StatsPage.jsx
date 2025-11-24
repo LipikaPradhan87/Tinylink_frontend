@@ -10,7 +10,6 @@ export default function StatsPage() {
   useEffect(() => {
     async function load() {
       try {
-        // Just fetch the link data, do NOT increment clicks here
         const data = await getLink(code);
         setLink(data);
       } catch (err) {
@@ -23,9 +22,8 @@ export default function StatsPage() {
   if (!link) return <div>Loading…</div>;
 
   const handleClick = async (e) => {
-    e.preventDefault(); // prevent default navigation
+    e.preventDefault(); 
     try {
-      // Call clickLink to increment clicks
       const updated = await clickLink(link.code);
       setLink(updated); // update stats
       window.open(link.target, "_blank"); // then open the target

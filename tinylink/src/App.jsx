@@ -19,7 +19,7 @@ export default function App() {
         <main className="container mx-auto px-4 py-6">
           <Routes>
             <Route path="/" element={<Dashboard/>} />
-            <Route path="/code/:code" element={<StatsPage/>} />
+            <Route path="/:code" element={<StatsPage/>} />
           </Routes>
         </main>
 
