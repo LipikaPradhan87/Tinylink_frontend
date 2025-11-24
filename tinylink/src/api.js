@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000/api/links";
+// const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:3000/api/links";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "https://tinylink-backend-cyan.vercel.app/api/links";
 
 async function request(path = "", options = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {
